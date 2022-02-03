@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Divider from './Divider';
 
-export default function Sentiment(props) {
+export default function SentimentOutput(props) {
   return (
     <div>
       <Divider />
 
-      {/* <!--    sentiment table    --> */}
+      {/* Output Display */}
       {props.visible ? (
         <table className="table table-striped">
           <thead>
@@ -14,7 +14,7 @@ export default function Sentiment(props) {
               <h4>Status</h4>
             </th>
             <th className="table-info w-25">
-              <h4>Weighting</h4>
+              <h4>Confidence</h4>
             </th>
             <th className="table-info w-25">
               <h4>Rating</h4>
