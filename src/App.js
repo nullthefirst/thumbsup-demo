@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Divider from './components/Divider';
+import Sentiment from './components/Sentiment';
+import Rating from './components/Rating';
+import Feedback from './components/Feedback';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col">
+            <Divider />
+
+            {/* <!--   review button    --> */}
+            <div className="mt-2 d-flex justify-content-between">
+              <button className="btn btn-warning btn-md">
+                Review <i className="bi bi-box-arrow-in-right"></i>
+              </button>
+              <button className="btn btn-danger btn-md">
+                Close <i className="bi bi-x-circle-fill"></i>
+              </button>
+            </div>
+
+            <Feedback />
+
+            <Rating />
+
+            <Sentiment />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
