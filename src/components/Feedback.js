@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import MonkeyLearn from 'monkeylearn';
 import Divider from './Divider';
 import SentimentOutput from './Sentiment';
 
 export default function Feedback(props) {
   // general
   const [feedback, setFeedback] = useState('');
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState('No');
   const [outputVisibility, setOutputVisibility] = useState(false);
 
   // feedback extraction
-  const [dataOutput, setDataOutput] = useState([]);
   const [status, setStatus] = useState('');
   const [weighting, setWeighting] = useState('');
 
@@ -44,16 +41,6 @@ export default function Feedback(props) {
         }
       })
       .catch((err) => console.error(err));
-
-    // let data = [`${feedback}`];
-
-    // ml.classifiers.classify(model_id, data).then((res) => {
-    //   // console.log(res.body);
-    //   let sentiment = res.body[0]['classifications'];
-    //   setStatus(sentiment['tag_name']);
-    //   let confidence = sentiment['confidence'] * 100;
-    //   setWeighting(confidence);
-    // });
   };
 
   // component
